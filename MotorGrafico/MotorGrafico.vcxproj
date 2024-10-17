@@ -143,8 +143,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1.-Inicio\1.1.-Ventana\ventan.cpp" />
+    <ClCompile Include="1.-Inicio\1.2.-Triangulo\triangulo.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
