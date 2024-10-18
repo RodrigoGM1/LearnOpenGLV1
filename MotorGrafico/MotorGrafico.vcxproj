@@ -145,6 +145,10 @@
   <ItemGroup>
     <ClCompile Include="1.-Inicio\1.1.-Ventana\ventan.cpp" />
     <ClCompile Include="1.-Inicio\1.2.-Triangulo\triangulo.cpp" />
+    <ClCompile Include="1.-Inicio\1.3.-Trianguloindece\trianguloindice.cpp" />
+    <ClCompile Include="1.-Inicio\2.1.-Shader\shader.cpp" />
+    <ClCompile Include="1.-Inicio\2.2.-ShaderColor\shaderColor.cpp" />
+    <ClCompile Include="1.-Inicio\2.3.-ShaderClass\shader_clas.cpp" />
     <ClCompile Include="glad.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
