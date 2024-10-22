@@ -71,11 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)include;$(SolutionDir)MotorGrafico\clases;$(IncludePath)</IncludePath>
     <ReferencePath>$(SolutionDir)lib;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)include;$(SolutionDir)MotorGrafico\clases;$(IncludePath)</IncludePath>
     <ReferencePath>$(SolutionDir)lib;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)MotorGrafico\clases;$(SolutionDir)include;$(IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,7 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)MotorGrafico\clases;$(SolutionDir)include;$(IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,10 +146,32 @@
     <ClCompile Include="1.-Inicio\1.1.-Ventana\ventan.cpp" />
     <ClCompile Include="1.-Inicio\1.2.-Triangulo\triangulo.cpp" />
     <ClCompile Include="1.-Inicio\1.3.-Trianguloindece\trianguloindice.cpp" />
-    <ClCompile Include="1.-Inicio\2.1.-Shader\shader.cpp" />
+    <ClCompile Include="1.-Inicio\2.1.-Shader\shaders.cpp" />
     <ClCompile Include="1.-Inicio\2.2.-ShaderColor\shaderColor.cpp" />
     <ClCompile Include="1.-Inicio\2.3.-ShaderClass\shader_clas.cpp" />
+    <ClCompile Include="1.-Inicio\3.2.-TexturaCombinada\texturascombinadas.cpp" />
+    <ClCompile Include="1.-Inicio\4.1.-Tranformacion\glm.cpp" />
+    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="1.-Inicio\3.1.-Texturas\textura.cpp" />
+    <ClCompile Include="clases\Shader.cpp" />
     <ClCompile Include="glad.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clases\Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="1.-Inicio\2.3.-ShaderClass\shader.fs" />
+    <None Include="1.-Inicio\2.3.-ShaderClass\shader.vs" />
+    <None Include="1.-Inicio\3.1.-Texturas\shader.fs" />
+    <None Include="1.-Inicio\3.1.-Texturas\shader.vs" />
+    <None Include="1.-Inicio\3.2.-TexturaCombinada\shader.fs" />
+    <None Include="1.-Inicio\3.2.-TexturaCombinada\shader.vs" />
+    <None Include="1.-Inicio\4.1.-Tranformacion\shader.fs" />
+    <None Include="1.-Inicio\4.1.-Tranformacion\shader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textura\awesomeface.png" />
+    <Image Include="textura\container.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
