@@ -52,8 +52,8 @@ int main()
     glEnable(GL_DEPTH_TEST);
     //Creacion del contexto OPENGL
 
-    Shader lightingShader("./2.-Iluminacion/2.1.-Color/color.vs", "./2.-Iluminacion/2.1.-Color/color.fs");
-    Shader lightingCuboShader("./2.-Iluminacion/2.1.-Color/cubo.vs", "./2.-Iluminacion/2.1.-Color/cubo.fs");
+    Shader lightingShader("./2.-Iluminacion/2.2.-IluminacionBasica/color.vs", "./2.-Iluminacion/2.2.-IluminacionBasica/color.fs");
+    Shader lightingCuboShader("./2.-Iluminacion/2.2.-IluminacionBasica/cubo.vs", "./2.-Iluminacion/2.2.-IluminacionBasica/cubo.fs");
 
     float vertices[] = {
         -0.5f, -0.5f, -0.5f,
