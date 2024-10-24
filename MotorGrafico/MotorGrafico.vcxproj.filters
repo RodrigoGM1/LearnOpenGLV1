@@ -51,9 +51,42 @@
     <ClCompile Include="1.-Inicio\4.1.-Tranformacion\glm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="1.-Inicio\5.1.-SistemaCordenada\sistemas_cordenada.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\5.2.-SistemaCordenadaRotacion\sistemas_cordenada_rotar.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\5.3.-SistemaCordenadasCubos\sistemas_cordenada_cubos.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\6.1.-Camara\camara.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\6.2.-CamaraVuelta\camara_vuelta.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\6.2.-CamaraVuelta\Source.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\6.3.-CamaraRotacion\camara_rotacion.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="1.-Inicio\6.4.-CamaraClass\camara_class.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="clases\CamaraClass.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="2.-Iluminacion\2.1.-Color\color.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="clases\CamaraClass.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -66,6 +99,22 @@
     <None Include="1.-Inicio\3.2.-TexturaCombinada\shader.vs" />
     <None Include="1.-Inicio\4.1.-Tranformacion\shader.vs" />
     <None Include="1.-Inicio\4.1.-Tranformacion\shader.fs" />
+    <None Include="1.-Inicio\5.1.-SistemaCordenada\shader.vs" />
+    <None Include="1.-Inicio\5.1.-SistemaCordenada\shader.fs" />
+    <None Include="1.-Inicio\5.2.-SistemaCordenadaRotacion\shader.fs" />
+    <None Include="1.-Inicio\5.2.-SistemaCordenadaRotacion\shader.vs" />
+    <None Include="1.-Inicio\5.3.-SistemaCordenadasCubos\shader.fs" />
+    <None Include="1.-Inicio\5.3.-SistemaCordenadasCubos\shader.vs" />
+    <None Include="1.-Inicio\6.1.-Camara\shader.fs" />
+    <None Include="1.-Inicio\6.1.-Camara\shader.vs" />
+    <None Include="1.-Inicio\6.2.-CamaraVuelta\shader.fs" />
+    <None Include="1.-Inicio\6.2.-CamaraVuelta\shader.vs" />
+    <None Include="1.-Inicio\6.3.-CamaraRotacion\shader.fs" />
+    <None Include="1.-Inicio\6.3.-CamaraRotacion\shader.vs" />
+    <None Include="1.-Inicio\6.4.-CamaraClass\shader.fs" />
+    <None Include="1.-Inicio\6.4.-CamaraClass\shader.vs" />
+    <None Include="2.-Iluminacion\2.1.-Color\shader.fs" />
+    <None Include="2.-Iluminacion\2.1.-Color\shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
