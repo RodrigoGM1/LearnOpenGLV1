@@ -166,6 +166,11 @@
     <ClCompile Include="2.-Iluminacion\2.5.-IluminacionMovimiento\iluminacion._movimiento.cpp" />
     <ClCompile Include="2.-Iluminacion\2.6.-IluminacionPong\iluminacion._pong.cpp" />
     <ClCompile Include="2.-Iluminacion\3.1.-Materirales\materiales.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.1.-LuzMapa\luz_mapa.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.2.-LuzMapaSpecular\luz_mapa_specular.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.3.-LanzadorLuz\lanzador_luz.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.4.-LucesPuntuales\puntual_luz.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.5.-LuzLinterna\luz_lintena.cpp" />
     <ClCompile Include="clases\CamaraClass.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="1.-Inicio\3.1.-Texturas\textura.cpp" />
@@ -227,10 +232,32 @@
     <None Include="2.-Iluminacion\3.1.-Materirales\material.vs" />
     <None Include="2.-Iluminacion\3.1.-Materirales\luz.fs" />
     <None Include="2.-Iluminacion\3.1.-Materirales\luz.vs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\luz.fs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\luz.vs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\material.fs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\material.vs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\luz.fs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\luz.vs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\material.fs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\material.vs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\luz.fs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\luz.vs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\material.fs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\material.vs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\luz.fs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\luz.vs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\material.fs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\material.vs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\luz.fs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\luz.vs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.fs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\awesomeface.png" />
     <Image Include="textura\container.jpg" />
+    <Image Include="textura\container2.png" />
+    <Image Include="textura\container2_specular.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

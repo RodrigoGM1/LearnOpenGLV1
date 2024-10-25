@@ -99,6 +99,21 @@
     <ClCompile Include="2.-Iluminacion\3.1.-Materirales\materiales.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.1.-LuzMapa\luz_mapa.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.2.-LuzMapaSpecular\luz_mapa_specular.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.3.-LanzadorLuz\lanzador_luz.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.4.-LucesPuntuales\puntual_luz.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.5.-LuzLinterna\luz_lintena.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
@@ -159,12 +174,38 @@
     <None Include="2.-Iluminacion\3.1.-Materirales\material.vs" />
     <None Include="2.-Iluminacion\3.1.-Materirales\luz.fs" />
     <None Include="2.-Iluminacion\3.1.-Materirales\luz.vs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\luz.fs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\luz.vs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\material.fs" />
+    <None Include="2.-Iluminacion\4.1.-LuzMapa\material.vs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\luz.fs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\luz.vs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\material.fs" />
+    <None Include="2.-Iluminacion\4.2.-LuzMapaSpecular\material.vs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\luz.fs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\luz.vs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\material.vs" />
+    <None Include="2.-Iluminacion\4.3.-LanzadorLuz\material.fs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\luz.fs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\luz.vs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\material.fs" />
+    <None Include="2.-Iluminacion\4.4.-LucesPuntuales\material.vs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\luz.fs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\luz.vs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.fs" />
+    <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
       <Filter>Archivos de recursos</Filter>
     </Image>
     <Image Include="textura\awesomeface.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\container2.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\container2_specular.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>
