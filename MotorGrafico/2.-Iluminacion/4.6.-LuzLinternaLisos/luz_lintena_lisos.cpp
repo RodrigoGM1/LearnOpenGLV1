@@ -20,11 +20,8 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
-
 int main()
 {
-    int width, height, nrChannels;
     //Creacion de la pantalla
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -53,8 +50,8 @@ int main()
     glEnable(GL_DEPTH_TEST);
     //Creacion del contexto OPENGL
 
-    Shader lightingShader("./2.-Iluminacion/4.5.-LuzLinterna/material.vs", "./2.-Iluminacion/4.5.-LuzLinterna/material.fs");
-    Shader lightingCuboShader("./2.-Iluminacion/4.5.-LuzLinterna/luz.vs", "./2.-Iluminacion/4.5.-LuzLinterna/luz.fs");
+    Shader lightingShader("./2.-Iluminacion/4.6.-LuzLinternaLisos/material.vs", "./2.-Iluminacion/4.6.-LuzLinternaLisos/material.fs");
+    Shader lightingCuboShader("./2.-Iluminacion/4.6.-LuzLinternaLisos/luz.vs", "./2.-Iluminacion/4.6.-LuzLinternaLisos/luz.fs");
 
     float vertices[] = {
         // positions          // normals           // texture coords
@@ -164,6 +161,7 @@ int main()
         lightingShader.setVec3("light.position", camara.Position);
         lightingShader.setVec3("light.direction", camara.Front);
         lightingShader.setFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
+        lightingShader.setFloat("light.outerCutOff", glm::cos(glm::radians(17.5f)));
         lightingShader.setVec3("viewPos", camara.Position);
 
         // light properties

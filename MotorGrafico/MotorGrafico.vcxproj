@@ -171,6 +171,8 @@
     <ClCompile Include="2.-Iluminacion\4.3.-LanzadorLuz\lanzador_luz.cpp" />
     <ClCompile Include="2.-Iluminacion\4.4.-LucesPuntuales\puntual_luz.cpp" />
     <ClCompile Include="2.-Iluminacion\4.5.-LuzLinterna\luz_lintena.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz_lintena_lisos.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luz_lintena_lisos.cpp" />
     <ClCompile Include="clases\CamaraClass.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="1.-Inicio\3.1.-Texturas\textura.cpp" />
@@ -252,6 +254,14 @@
     <None Include="2.-Iluminacion\4.5.-LuzLinterna\luz.vs" />
     <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.fs" />
     <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.vs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz.fs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz.vs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\material.fs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\material.vs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\luz.fs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\luz.vs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.fs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\awesomeface.png" />

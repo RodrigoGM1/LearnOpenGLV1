@@ -114,6 +114,12 @@
     <ClCompile Include="2.-Iluminacion\4.5.-LuzLinterna\luz_lintena.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz_lintena_lisos.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luz_lintena_lisos.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
@@ -194,6 +200,14 @@
     <None Include="2.-Iluminacion\4.5.-LuzLinterna\luz.vs" />
     <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.fs" />
     <None Include="2.-Iluminacion\4.5.-LuzLinterna\material.vs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz.fs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz.vs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\material.fs" />
+    <None Include="2.-Iluminacion\4.6.-LuzLinternaLisos\material.vs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\luz.fs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\luz.vs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.fs" />
+    <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
