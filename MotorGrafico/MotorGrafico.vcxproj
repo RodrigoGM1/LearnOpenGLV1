@@ -73,10 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)include;$(SolutionDir)MotorGrafico\clases;$(IncludePath)</IncludePath>
     <ReferencePath>$(SolutionDir)lib;$(ReferencePath)</ReferencePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)include;$(SolutionDir)MotorGrafico\clases;$(IncludePath)</IncludePath>
     <ReferencePath>$(SolutionDir)lib;$(ReferencePath)</ReferencePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -118,7 +120,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;assimp-vc143-mtd.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -138,7 +140,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;assimp-vc143-mtd.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -172,8 +174,13 @@
     <ClCompile Include="2.-Iluminacion\4.4.-LucesPuntuales\puntual_luz.cpp" />
     <ClCompile Include="2.-Iluminacion\4.5.-LuzLinterna\luz_lintena.cpp" />
     <ClCompile Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz_lintena_lisos.cpp" />
-    <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luz_lintena_lisos.cpp" />
+    <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luces_multiples.cpp" />
+    <ClCompile Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.cpp" />
+    <ClCompile Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba_profunda.cpp" />
+    <ClCompile Include="4.OpenGLAvanzado\4.2.-PruebaStencill\prueba_stencil.cpp" />
     <ClCompile Include="clases\CamaraClass.cpp" />
+    <ClCompile Include="clases\Mesh.cpp" />
+    <ClCompile Include="clases\Model.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="1.-Inicio\3.1.-Texturas\textura.cpp" />
     <ClCompile Include="clases\Shader.cpp" />
@@ -181,6 +188,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\CamaraClass.h" />
+    <ClInclude Include="clases\filesystem.h" />
+    <ClInclude Include="clases\Mesh.h" />
+    <ClInclude Include="clases\Model.h" />
+    <ClInclude Include="clases\root_directory.h" />
     <ClInclude Include="clases\Shader.h" />
   </ItemGroup>
   <ItemGroup>
@@ -262,12 +273,27 @@
     <None Include="2.-Iluminacion\4.7.-LucesMultiples\luz.vs" />
     <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.fs" />
     <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.vs" />
+    <None Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.fs" />
+    <None Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.vs" />
+    <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.fs" />
+    <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.vs" />
+    <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.fs" />
+    <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.vs" />
+    <None Include="assimp-vc143-mtd.dll" />
+    <None Include="Objetos\Survival_BackPack_2\Survival_BackPack_2.fbx" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Objetos\Survival_BackPack_2\1001_albedo.jpg" />
+    <Image Include="Objetos\Survival_BackPack_2\1001_AO.jpg" />
+    <Image Include="Objetos\Survival_BackPack_2\1001_metallic.jpg" />
+    <Image Include="Objetos\Survival_BackPack_2\1001_normal.png" />
+    <Image Include="Objetos\Survival_BackPack_2\1001_roughness.jpg" />
     <Image Include="textura\awesomeface.png" />
     <Image Include="textura\container.jpg" />
     <Image Include="textura\container2.png" />
     <Image Include="textura\container2_specular.png" />
+    <Image Include="textura\marble.jpg" />
+    <Image Include="textura\metal.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -117,7 +117,22 @@
     <ClCompile Include="2.-Iluminacion\4.6.-LuzLinternaLisos\luz_lintena_lisos.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luz_lintena_lisos.cpp">
+    <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luces_multiples.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="clases\Mesh.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="clases\Model.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba_profunda.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.2.-PruebaStencill\prueba_stencil.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,6 +141,18 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="clases\CamaraClass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="clases\Mesh.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="clases\Model.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="clases\filesystem.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="clases\root_directory.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -208,6 +235,14 @@
     <None Include="2.-Iluminacion\4.7.-LucesMultiples\luz.vs" />
     <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.fs" />
     <None Include="2.-Iluminacion\4.7.-LucesMultiples\material.vs" />
+    <None Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.vs" />
+    <None Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.fs" />
+    <None Include="assimp-vc143-mtd.dll" />
+    <None Include="Objetos\Survival_BackPack_2\Survival_BackPack_2.fbx" />
+    <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.fs" />
+    <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.vs" />
+    <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.vs" />
+    <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
@@ -220,6 +255,27 @@
       <Filter>Archivos de recursos</Filter>
     </Image>
     <Image Include="textura\container2_specular.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Objetos\Survival_BackPack_2\1001_albedo.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Objetos\Survival_BackPack_2\1001_AO.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Objetos\Survival_BackPack_2\1001_metallic.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Objetos\Survival_BackPack_2\1001_normal.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Objetos\Survival_BackPack_2\1001_roughness.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\marble.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\metal.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>
