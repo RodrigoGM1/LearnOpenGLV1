@@ -135,6 +135,27 @@
     <ClCompile Include="4.OpenGLAvanzado\4.2.-PruebaStencill\prueba_stencil.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.3.-Mezcla\mezcla.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.4-Mezcla\mezclaCuadro.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.5.-FragmentoBuffer\fragmento_buffer.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.6.-FragmentoPosprosesamiento\fragmento_posprosesamiento.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.7.-MapaCubico\mapa_cubos.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\mapa_cubos._espejo.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\glsl_avanzado.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
@@ -243,6 +264,32 @@
     <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.vs" />
     <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.vs" />
     <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.fs" />
+    <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\sombreador.fs" />
+    <None Include="4.OpenGLAvanzado\4.3.-Mezcla\mezcla.fs" />
+    <None Include="4.OpenGLAvanzado\4.3.-Mezcla\mezcla.vs" />
+    <None Include="4.OpenGLAvanzado\4.4-Mezcla\mezcla.vs" />
+    <None Include="4.OpenGLAvanzado\4.4-Mezcla\mezcla.fs" />
+    <None Include="4.OpenGLAvanzado\4.5.-FragmentoBuffer\fragmento_buffer.fs" />
+    <None Include="4.OpenGLAvanzado\4.5.-FragmentoBuffer\fragmento_buffer.vs" />
+    <None Include="4.OpenGLAvanzado\4.5.-FragmentoBuffer\fragmento_buffer_screen.fs" />
+    <None Include="4.OpenGLAvanzado\4.5.-FragmentoBuffer\fragmento_buffer_screen.vs" />
+    <None Include="4.OpenGLAvanzado\4.6.-FragmentoPosprosesamiento\fragmento_buffer.fs" />
+    <None Include="4.OpenGLAvanzado\4.6.-FragmentoPosprosesamiento\fragmento_buffer.vs" />
+    <None Include="4.OpenGLAvanzado\4.6.-FragmentoPosprosesamiento\fragmento_buffer_screen.fs" />
+    <None Include="4.OpenGLAvanzado\4.6.-FragmentoPosprosesamiento\fragmento_buffer_screen.vs" />
+    <None Include="4.OpenGLAvanzado\4.7.-MapaCubico\cubo.fs" />
+    <None Include="4.OpenGLAvanzado\4.7.-MapaCubico\cubo.vs" />
+    <None Include="4.OpenGLAvanzado\4.7.-MapaCubico\mapa_cubo.fs" />
+    <None Include="4.OpenGLAvanzado\4.7.-MapaCubico\mapa_cubo.vs" />
+    <None Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\cubo.fs" />
+    <None Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\cubo.vs" />
+    <None Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\mapa_cubo.fs" />
+    <None Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\mapa_cubo.vs" />
+    <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\blue.fs" />
+    <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\glsl_avanzado.vs" />
+    <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\green.fs" />
+    <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\red.fs" />
+    <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\yellow.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
@@ -276,6 +323,30 @@
       <Filter>Archivos de recursos</Filter>
     </Image>
     <Image Include="textura\metal.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\grass.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\blending_transparent_window.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\skybox\back.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\skybox\bottom.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\skybox\front.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\skybox\left.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\skybox\right.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\skybox\top.jpg">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>

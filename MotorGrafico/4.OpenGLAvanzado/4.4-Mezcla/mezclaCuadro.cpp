@@ -5,12 +5,13 @@
 
 #include "Shader.h"
 #include "CamaraClass.h"
+#include "Model.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int ancho, int alto);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow* window);
-unsigned int cargarImagen(const char* path);
+unsigned int cargarImagen(const char* path, GLenum valor);
 
 CamaraClass camara(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = 400;
@@ -20,7 +21,7 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-//glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main()
 {
@@ -50,14 +51,11 @@ int main()
         return -1;
     }
     glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-    glEnable(GL_STENCIL_TEST);
-    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     //Creacion del contexto OPENGL
 
-    Shader shader("./4.OpenGLAvanzado/4.2.-PruebaStencill/stencil.vs", "./4.OpenGLAvanzado/4.2.-PruebaStencill/stencil.fs");
-    Shader shaderColor("./4.OpenGLAvanzado/4.2.-PruebaStencill/stencil.vs", "./4.OpenGLAvanzado/4.2.-PruebaStencill/sombreador.fs");
+    Shader shader("./4.OpenGLAvanzado/4.4-Mezcla/mezcla.vs", "./4.OpenGLAvanzado/4.4-Mezcla/mezcla.fs");
 
     float cubeVertices[] = {
         // positions          // texture Coords
@@ -115,6 +113,17 @@ int main()
          5.0f, -0.5f, -5.0f,  2.0f, 2.0f
     };
 
+    float transparentVertices[] = {
+        // positions         // texture Coords (swapped y coordinates because texture is flipped upside down)
+        0.0f,  0.5f,  0.0f,  0.0f,  0.0f,
+        0.0f, -0.5f,  0.0f,  0.0f,  1.0f,
+        1.0f, -0.5f,  0.0f,  1.0f,  1.0f,
+
+        0.0f,  0.5f,  0.0f,  0.0f,  0.0f,
+        1.0f, -0.5f,  0.0f,  1.0f,  1.0f,
+        1.0f,  0.5f,  0.0f,  1.0f,  0.0f
+    };
+
     unsigned cubeVAO, cubeVBO;
     glGenVertexArrays(1, &cubeVAO);
     glGenBuffers(1, &cubeVBO);
@@ -139,8 +148,28 @@ int main()
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(0);
 
-    unsigned int cubeTexture = cargarImagen("./textura/marble.jpg");
-    unsigned int floorTexture = cargarImagen("./textura/metal.png");
+    unsigned trasparentVAO, trasparentVBO;
+    glGenVertexArrays(1, &trasparentVAO);
+    glGenBuffers(1, &trasparentVBO);
+    glBindVertexArray(trasparentVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, trasparentVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(transparentVertices), &transparentVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(0);
+
+    unsigned int cubeTexture = cargarImagen("./textura/marble.jpg", GL_REPEAT);
+    unsigned int floorTexture = cargarImagen("./textura/metal.png", GL_REPEAT);
+    unsigned int trasparentTexture = cargarImagen("./textura/blending_transparent_window.png", GL_CLAMP_TO_EDGE);
+
+    vector<glm::vec3> windows;
+    windows.push_back(glm::vec3(-1.5f, 0.0f, -0.48f));
+    windows.push_back(glm::vec3(1.5f, 0.0f, 0.51f));
+    windows.push_back(glm::vec3(0.0f, 0.0f, 0.7f));
+    windows.push_back(glm::vec3(-0.3f, 0.0f, -2.3f));
+    windows.push_back(glm::vec3(0.1f, 0.0f, -0.4f));
 
     shader.use();
     shader.setInt("texture1", 0);
@@ -154,30 +183,21 @@ int main()
 
         processInput(window);
 
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        std::map<float, glm::vec3> sorted;
+        for (unsigned int i = 0; i < windows.size(); i++) {
+            float distance = glm::length(camara.Position - windows[i]);
+            sorted[distance] = windows[i];
+        }
 
-        shaderColor.use();
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        shader.use();
         glm::mat4 model = glm::mat4(1.0f);
         glm::mat4 view = camara.GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(camara.Zoom), (float)800 / (float)600, 0.1f, 100.0f);
-        shaderColor.setMat4("view", view);
-        shaderColor.setMat4("projection", projection);
-
-        shader.use();
-        shader.setMat4("view", view);
         shader.setMat4("projection", projection);
-
-        glStencilMask(0x00);
-
-        glBindVertexArray(planeVAO);
-        glBindTexture(GL_TEXTURE_2D, floorTexture);
-        shader.setMat4("model", glm::mat4(1.0f));
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-        glBindVertexArray(0);
-
-        glStencilFunc(GL_ALWAYS, 1, 0xFF);
-        glStencilMask(0xFF);
+        shader.setMat4("view", view);
 
         glBindVertexArray(cubeVAO);
         glActiveTexture(GL_TEXTURE0);
@@ -185,43 +205,29 @@ int main()
         model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
         shader.setMat4("model", model);
         glDrawArrays(GL_TRIANGLES, 0, 36);
-        model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
         shader.setMat4("model", model);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
-        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-        glStencilMask(0x00);
-        glDisable(GL_DEPTH_TEST);
-        shaderColor.use();
-        float scale = 1.1f;
+        glBindVertexArray(planeVAO);
+        glBindTexture(GL_TEXTURE_2D, floorTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray;
 
-        glBindVertexArray(cubeVAO);
-        glBindTexture(GL_TEXTURE_2D, cubeTexture);
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
-        model = glm::scale(model, glm::vec3(scale, scale, scale));
-        shaderColor.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(scale, scale, scale));
-        shaderColor.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        glBindVertexArray(0);
-        glStencilMask(0xFF);
-        glStencilFunc(GL_ALWAYS, 0, 0xFF);
-        glEnable(GL_DEPTH_TEST);
+        glBindVertexArray(trasparentVAO);
+        glBindTexture(GL_TEXTURE_2D, trasparentTexture);
+        for (std::map<float, glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sorted.rend(); ++it) {
+            model = glm::mat4(1.0f);
+            model = glm::translate(model, it->second);
+            shader.setMat4("model", model);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+        }
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
     //Loop de renderizado
-
-    glDeleteVertexArrays(1, &cubeVAO);
-    glDeleteVertexArrays(1, &planeVAO);
-    glDeleteBuffers(1, &cubeVBO);
-    glDeleteBuffers(1, &planeVBO);
 
     glfwTerminate();
 
@@ -271,7 +277,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
     camara.ProcessMouseScroll(yoffset);
 }
 
-unsigned int cargarImagen(const char* path)
+unsigned int cargarImagen(const char* path, GLenum valor)
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -294,8 +300,8 @@ unsigned int cargarImagen(const char* path)
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, valor);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, valor);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
