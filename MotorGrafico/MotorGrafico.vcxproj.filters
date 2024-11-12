@@ -156,6 +156,18 @@
     <ClCompile Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\glsl_avanzado.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\sombreado_gemoterico.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_normal.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
@@ -290,6 +302,17 @@
     <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\green.fs" />
     <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\red.fs" />
     <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\yellow.fs" />
+    <None Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\geometry.gs" />
+    <None Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\geometry.fs" />
+    <None Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\geometry.vs" />
+    <None Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.fs" />
+    <None Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.vs" />
+    <None Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.gs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.gs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.fs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.vs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\default.vs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\default.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">

@@ -177,6 +177,9 @@
     <ClCompile Include="2.-Iluminacion\4.7.-LucesMultiples\luces_multiples.cpp" />
     <ClCompile Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba_profunda.cpp" />
+    <ClCompile Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\sombreado_gemoterico.cpp" />
+    <ClCompile Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.cpp" />
+    <ClCompile Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_normal.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.2.-PruebaStencill\prueba_stencil.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.3.-Mezcla\mezcla.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.4-Mezcla\mezclaCuadro.cpp" />
@@ -185,6 +188,7 @@
     <ClCompile Include="4.OpenGLAvanzado\4.7.-MapaCubico\mapa_cubos.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\mapa_cubos._espejo.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\glsl_avanzado.cpp" />
+    <ClCompile Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.cpp" />
     <ClCompile Include="clases\CamaraClass.cpp" />
     <ClCompile Include="clases\Mesh.cpp" />
     <ClCompile Include="clases\Model.cpp" />
@@ -284,6 +288,17 @@
     <None Include="3.-CargarModelo\3.1.-cargador_modelo\cargar_modelo.vs" />
     <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.fs" />
     <None Include="4.OpenGLAvanzado\4.1.-PruebaProfunda\prueba.vs" />
+    <None Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\geometry.fs" />
+    <None Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\geometry.gs" />
+    <None Include="4.OpenGLAvanzado\4.10.-SombreadoGeometrico\geometry.vs" />
+    <None Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.fs" />
+    <None Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.gs" />
+    <None Include="4.OpenGLAvanzado\4.11.-SombreadoExplo\shader_exploding.vs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\default.fs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\default.vs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.fs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.gs" />
+    <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.vs" />
     <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\sombreador.fs" />
     <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.fs" />
     <None Include="4.OpenGLAvanzado\4.2.-PruebaStencill\stencil.vs" />
