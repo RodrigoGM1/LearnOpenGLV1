@@ -11,10 +11,10 @@ void framebuffer_size_callback(GLFWwindow* window, int ancho, int alto);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow* window);
-unsigned int cargarImagen(const char* path);
+unsigned int cargarImagen(const char* path, bool gammaCorrection);
 
-bool blinn = false;
-bool blinnKeyPressed = false;
+bool gammaEnable = false;
+bool gammaKeyPressed = false;
 
 CamaraClass camara(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = 400;
@@ -57,7 +57,7 @@ int main()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC1_ALPHA);
     //Creacion del contexto OPENGL
 
-    Shader shader("./5.-IluminacionAvanzada/5.1.-IluminacionAvanzada/iluminacion_avanzada.vs", "./5.-IluminacionAvanzada/5.1.-IluminacionAvanzada/iluminacion_avanzada.fs");
+    Shader shader("./5.-IluminacionAvanzada/5.2.-CorrecionGamma/iluminacion_avanzada.vs", "./5.-IluminacionAvanzada/5.2.-CorrecionGamma/iluminacion_avanzada.fs");
 
     float planeVertices[] = {
         // positions            // normals         // texcoords
@@ -84,12 +84,24 @@ int main()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glBindVertexArray(0);
 
-    unsigned int floorTexture = cargarImagen("./textura/wood.png");
+    unsigned int floorTexture = cargarImagen("./textura/wood.png", false);
+    unsigned int floorTextureGammaCorrect = cargarImagen("./textura/wood.png", true);
 
     shader.use();
     shader.setInt("texture1", 0);
 
-    glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
+    glm::vec3 lightPositions[] = {
+        glm::vec3(-3.0f, 0.0f, 0.0f),
+        glm::vec3(-1.0f, 0.0f, 0.0f),
+        glm::vec3(1.0f, 0.0f, 0.0f),
+        glm::vec3(3.0f, 0.0f, 0.0f)
+    };
+    glm::vec3 lightColors[] = {
+        glm::vec3(0.25),
+        glm::vec3(0.50),
+        glm::vec3(0.75),
+        glm::vec3(1.00)
+    };
 
     //Loop de renderizado
     while (!glfwWindowShouldClose(window)) {
@@ -109,16 +121,15 @@ int main()
         shader.setMat4("projection", projection);
         shader.setMat4("view", view);
 
+        glUniform3fv(glGetUniformLocation(shader.ID, "lightPositions"), 4, &lightPositions[0][0]);
+        glUniform3fv(glGetUniformLocation(shader.ID, "lightColors"), 4, &lightPositions[0][0]);
         shader.setVec3("viewPos", camara.Position);
-        shader.setVec3("lightPos", lightPos);
-        shader.setInt("blinn", blinn);
+        shader.setInt("gamma", gammaEnable);
 
         glBindVertexArray(planeVAO);
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, floorTexture);
+        glBindTexture(GL_TEXTURE_2D, gammaEnable ? floorTextureGammaCorrect : floorTexture);
         glDrawArrays(GL_TRIANGLES, 0, 6);
-
-        std::cout << (blinn ? "Blinn-Phong" : "Phong") << std::endl;
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -175,7 +186,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
     camara.ProcessMouseScroll(yoffset);
 }
 
-unsigned int cargarImagen(const char* path)
+unsigned int cargarImagen(const char* path, bool gammaCorrection)
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -188,10 +199,10 @@ unsigned int cargarImagen(const char* path)
             format = GL_RED;
         }
         else if (nrChannels == 3) {
-            format = GL_RGB;
+            format = gammaCorrection ? GL_SRGB : GL_RGB;
         }
         else if (nrChannels == 4) {
-            format = GL_RGBA;
+            format = gammaCorrection ? GL_SRGB_ALPHA : GL_RGBA;
         }
 
         glBindTexture(GL_TEXTURE_2D, textureID);

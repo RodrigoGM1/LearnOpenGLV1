@@ -189,6 +189,9 @@
     <ClCompile Include="4.OpenGLAvanzado\4.8.-MapaCubicoEspejo\mapa_cubos._espejo.cpp" />
     <ClCompile Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\glsl_avanzado.cpp" />
     <ClCompile Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.cpp" />
+    <ClCompile Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\correcion_gamma.cpp" />
+    <ClCompile Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombras.cpp" />
+    <ClCompile Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\reprecentacion_sombras.cpp" />
     <ClCompile Include="clases\CamaraClass.cpp" />
     <ClCompile Include="clases\Mesh.cpp" />
     <ClCompile Include="clases\Model.cpp" />
@@ -327,6 +330,20 @@
     <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\green.fs" />
     <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\red.fs" />
     <None Include="4.OpenGLAvanzado\4.9.-GLSLAvnazado\yellow.fs" />
+    <None Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.fs" />
+    <None Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.vs" />
+    <None Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\iluminacion_avanzada.fs" />
+    <None Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\iluminacion_avanzada.vs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\debug_quad.vs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\debug_quad_depth.fs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombreado.fs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombreado.vs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\debug_quad.vs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\debug_quad_depth.fs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\mapeo_sombreado.fs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\mapeo_sombreado.vs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.fs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.vs" />
     <None Include="assimp-vc143-mtd.dll" />
     <None Include="Objetos\Survival_BackPack_2\Survival_BackPack_2.fbx" />
   </ItemGroup>
@@ -350,6 +367,7 @@
     <Image Include="textura\skybox\left.jpg" />
     <Image Include="textura\skybox\right.jpg" />
     <Image Include="textura\skybox\top.jpg" />
+    <Image Include="textura\wood.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

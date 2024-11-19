@@ -168,6 +168,15 @@
     <ClCompile Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\correcion_gamma.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombras.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\reprecentacion_sombras.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
@@ -313,6 +322,20 @@
     <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\shader_exploding.vs" />
     <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\default.vs" />
     <None Include="4.OpenGLAvanzado\4.12.-SombreadoNormal\default.fs" />
+    <None Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.vs" />
+    <None Include="5.-IluminacionAvanzada\5.1.-IluminacionAvanzada\iluminacion_avanzada.fs" />
+    <None Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\iluminacion_avanzada.fs" />
+    <None Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\iluminacion_avanzada.vs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombreado.vs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombreado.fs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\debug_quad.vs" />
+    <None Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\debug_quad_depth.fs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\debug_quad.vs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\debug_quad_depth.fs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\mapeo_sombreado.fs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\mapeo_sombreado.vs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.vs" />
+    <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
@@ -370,6 +393,9 @@
       <Filter>Archivos de recursos</Filter>
     </Image>
     <Image Include="textura\skybox\top.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="textura\wood.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>
