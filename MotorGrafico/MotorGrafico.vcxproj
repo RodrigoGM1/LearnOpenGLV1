@@ -24,6 +24,7 @@
     <ProjectGuid>{557da6fa-b630-4cbb-9e0b-dcf03fb15ea5}</ProjectGuid>
     <RootNamespace>MotorGrafico</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>LearnOpenGL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -192,6 +193,7 @@
     <ClCompile Include="5.-IluminacionAvanzada\5.2.-CorrecionGamma\correcion_gamma.cpp" />
     <ClCompile Include="5.-IluminacionAvanzada\5.3.-mapeo_sombreado\mapeo_sombras.cpp" />
     <ClCompile Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\reprecentacion_sombras.cpp" />
+    <ClCompile Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\sombras_puntuales.cpp" />
     <ClCompile Include="clases\CamaraClass.cpp" />
     <ClCompile Include="clases\Mesh.cpp" />
     <ClCompile Include="clases\Model.cpp" />
@@ -344,6 +346,11 @@
     <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\mapeo_sombreado.vs" />
     <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.fs" />
     <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.vs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows.fs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows.vs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows_depth.fs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows_depth.gs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows_depth.vs" />
     <None Include="assimp-vc143-mtd.dll" />
     <None Include="Objetos\Survival_BackPack_2\Survival_BackPack_2.fbx" />
   </ItemGroup>

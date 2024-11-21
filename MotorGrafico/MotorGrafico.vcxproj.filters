@@ -177,6 +177,9 @@
     <ClCompile Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\reprecentacion_sombras.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\sombras_puntuales.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
@@ -336,6 +339,11 @@
     <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\mapeo_sombreado.vs" />
     <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.vs" />
     <None Include="5.-IluminacionAvanzada\5.4.-RepresentacionSombras\sombreado.fs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows.fs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows.vs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows_depth.vs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows_depth.gs" />
+    <None Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\point_shadows_depth.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textura\container.jpg">
