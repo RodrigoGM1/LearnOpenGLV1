@@ -197,6 +197,7 @@
     <ClCompile Include="clases\CamaraClass.cpp" />
     <ClCompile Include="clases\Mesh.cpp" />
     <ClCompile Include="clases\Model.cpp" />
+    <ClCompile Include="prueba.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="1.-Inicio\3.1.-Texturas\textura.cpp" />
     <ClCompile Include="clases\Shader.cpp" />

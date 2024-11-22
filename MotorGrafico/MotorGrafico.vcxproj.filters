@@ -180,6 +180,9 @@
     <ClCompile Include="5.-IluminacionAvanzada\5.5.-SombraPuntuales\sombras_puntuales.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="prueba.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clases\Shader.h">
